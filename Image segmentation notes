@@ -1,0 +1,72 @@
+ INTRODUCTION : 
+ 1- the proposed procedure, new methods to weaken the effect of nonuniform illumination,
+ correction of the effect of thick hairs and large glows on the lesion and also, a new threshold-based segmentation 
+ algorithm are presented. 87 features representing asymmetry, border irregularity, color variation, diameter and texture are extracted
+ from the lesion area and after reducing the number of features using principal component analysis (PCA)
+ 2- lesions are determined as malignant or benign using support vector machine classifier.
+ the proposed processing methods have the ability to detect lesions area with high accuracy
+ 3-  Characteristics of both benign and malignant pigmented skin lesions are similar which makes 
+ differentiating between them a challenging problem.
+ 4- In this figure, the differences between visible characteristics of the two mentioned types of image, is clear. 
+ So, various computer processing techniques must be used for their analysis.
+ 5-In this study, for lesion area segmentation, first the elimination of the low frequency spatial component of the image
+ was used for background correction, and then a thresholding based method which was inspired by Otsu's algorithm,
+ was applied to segment the lesion area.
+ ==>  In this procedure, a new method in order to weaken the effect of nonuniform illumination and also, 
+ a new threshold based algorithm in order to segment lesion area is described and applied on the database. 
+ Then, after introduction and applying new methods to correct the effect of thick hairs and large glows on the lesion, 
+ 187 features which indicate asymmetry, border irregularity, color variation, diameter and texture are extracted. 
+ The number of features is reduced using principal component analysis (PCA) algorithm and the result
+ is used for predicting the type of lesion as benign or malignant using support vector machine (SVM) classifier.
+ 
+ METHODS : 
+ the first stage is preprocessing which includes removing effects of macroscopic images artifacts and determing lesion area nwith high accruacy .
+ the second stage , descriptor features of lesions are extracted and in the third stage which is called the classificatin stage. 
+ optimal features are determined and used to predict the type of lesions. 
+ 
+ DATASET : 
+ this set inludes RGB images : x benign lesions and y malignant  which have various dimensions of 259*382 to 1186 *1369 pixels.
+ 
+ Preprocessing : 
+ there are : impact noise / skin lines / fine hairs/ skin stains and small glows and reflections are rmoved by applying a median filter with mask size. 
+ in order to weaken the effect of nonuniform illumination or dhadow image of original RGB color space is converted to hue saturation and value HSV space 
+ beacuse shadwo effect in in cvalue channel are more visible than other channels and spaces. 
+ 
+ a skin lesion image (a) the origianl image (b) the processed image after applying median filter and shadow reduction method. 
+ 
+ the second step in the preprocessing stage is segmentation  of the lesion area from surrounding normal skin.
+ for this purpose, a new simple and accurate segmentation method which is based on thresholding technique is introduces in which the single 
+ channel images containg determinant factors of lesion border meaning color , illumination,and texture are obtained firstly. 
+ sepearation of lesion from healthy skin is more effective by using one of the three mentionned single channel images which are detetrmined by examining the histogram information. 
+ 
+ 
+ 
+ 
+ The skin cancer detection framework consists of novel algorithms to perform the following:
+
+illumination correction preprocessing : The first step in the proposed framework is a preprocessing step, where the image is corrected for illumination variation (i.e. the presence of shadows and brightly illuminated areas). 
+
+segmentation of the lesion :The objective of the skin lesion segmentation step is to find the border of the skin lesion. It is important that this step is performed accurately because many features used to assess the risk of melanoma are derived based on the lesion border. Our approach to finding the lesion border is a texture distinctiveness-based lesion segmentation. 
+a- the first stage of thre skin lesion segmentation algorithm is to learn representative texture distributions and calculate the texture distinctivness metric for each distribution .
+a texture vector is extracted for each pixel in the image. then a gauxian mixture model is implemented tahtat learns the texture distributions based on the set of the texture vectors. 
+finally the dissimilarity between a texture distribution and all other texture distributions is measured which is quantified as the texture distinctiveness metric. 
+
+feature extraction : 
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
